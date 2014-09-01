@@ -17,12 +17,10 @@ for f in $(find pt14 -path 'pt14/20*' -name 'index.html' -mindepth 5 -maxdepth 5
   t=$(basename $(dirname $f))
   cat > _posts/$y-$m-$d-$t.md <<EOF
 ---
-layout: post
 title:
 author:
 ---
-{% include JB/setup %}
 
 EOF
-  pandoc --atx-headers -f html -t markdown $f | iconv -f UTF-8 -t ASCII//TRANSLIT >> _posts/$y-$m-$d-$t.md
+  pandoc --atx-headers -f html -t markdown-raw_html $f | iconv -f UTF-8 -t ASCII//TRANSLIT >> _posts/$y-$m-$d-$t.md
 done
