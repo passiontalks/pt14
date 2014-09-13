@@ -1,2 +1,2 @@
-exclude: ["README.md"]
+exclude: ["CNAME", "README.md"]
 include: ["_static"]
